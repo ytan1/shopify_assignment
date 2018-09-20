@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+  position: relative;
+  min-height: 100%;
+}
+
+.container{
+  position: absolute;
+  width: 100%;
+  top: 100px;
+  bottom: 0;
+  overflow-y: auto;
+}
+/*.clearfix::after{
+  clear: both;
+  content: '';
+  height: 0;
+  display: table;
+}*/

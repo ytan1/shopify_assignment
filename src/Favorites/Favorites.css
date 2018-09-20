@@ -1,0 +1,13 @@
+.Favorites{
+    background: #f1edff;
+    width: 50%;
+    display: inline-block;
+    height: 100%;
+    padding: 20px;
+    vertical-align: top;
+}
+@media screen and (max-width: 720px){
+    .Favorites{
+        width: 100%;
+    }
+}

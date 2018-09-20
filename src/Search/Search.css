@@ -1,0 +1,39 @@
+.Search{
+    width: 50%;
+    display: inline-block;
+    height: 100%;
+    padding: 20px;
+}
+@media screen and (max-width: 720px){
+    .Search{
+        width: 100%;
+    }
+    .Favorites{
+        width: 100%;
+    }
+}
+.input{
+    width: 100%;
+    position: relative;
+}
+.search-box{
+    width: 75%;
+    position: absolute;
+    left: 0;
+    height: 40px;
+     outline: none;
+    border-radius: 2px;
+    border: 1px solid #eee;
+}
+.search-btn{
+    width: 20%;
+    float: right;
+    position: absolute;
+    right: 0;
+    height: 40px;
+   line-height: 40px;
+   color: white;
+   cursor: pointer;
+    border-radius: 5px;
+    background: #663ee8;
+}
