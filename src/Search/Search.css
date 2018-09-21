@@ -1,20 +1,22 @@
 .Search{
     width: 50%;
-    display: inline-block;
-    height: 100%;
+    display: table-cell;
+    min-height: 100%;
     padding: 20px;
 }
-@media screen and (max-width: 720px){
+@media screen and (max-width: 860px){
     .Search{
         width: 100%;
+        display: block;
+        min-height: 500px;
     }
-    .Favorites{
-        width: 100%;
-    }
+
 }
 .input{
     width: 100%;
     position: relative;
+    display: table;
+    height: 50px;
 }
 .search-box{
     width: 75%;
@@ -24,10 +26,13 @@
      outline: none;
     border-radius: 2px;
     border: 1px solid #eee;
+    line-height: 30px;
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 200;
 }
 .search-btn{
     width: 20%;
-    float: right;
     position: absolute;
     right: 0;
     height: 40px;
@@ -36,4 +41,18 @@
    cursor: pointer;
     border-radius: 5px;
     background: #663ee8;
+}
+.searchErr{
+    width: 100%;
+    padding:10px;
+    font-size: 20px;
+    color: #ff6666;
+    border-radius: 5px;
+    background: #ffe0e0;
+}
+.clearfix::after{
+    clear: both;
+    content: '';
+    height: 0;
+    display: table;
 }

@@ -1,13 +1,15 @@
 .Favorites{
     background: #f1edff;
     width: 50%;
-    display: inline-block;
+    display: table-cell;
     height: 100%;
     padding: 20px;
     vertical-align: top;
 }
-@media screen and (max-width: 720px){
+@media screen and (max-width: 860px){
     .Favorites{
         width: 100%;
+        display: block;
+        min-height: 500px;
     }
 }

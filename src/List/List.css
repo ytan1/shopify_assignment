@@ -1,0 +1,24 @@
+.listHeader{
+    width: 100%;
+    position: relative;
+    font-weight: 600;
+    height: 50px;
+}
+.listName{
+    position: absolute;
+    left: 0;
+}
+.listLang{
+    position: absolute;
+    left: 50%;
+
+}
+.listTag{
+    position: absolute;
+    left: 70%;
+}
+.list{
+    position: relative;
+    display: block;
+    min-height: 100%;
+}

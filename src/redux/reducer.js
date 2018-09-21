@@ -1,0 +1,6 @@
+import { combineReducers } from 'redux'
+import { search } from './search.redux'
+import { favorites } from './favorites.redux'
+
+
+export const reducer = combineReducers({ search, favorites })
