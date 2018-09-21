@@ -18,8 +18,8 @@ export default class Item extends React.Component {
   }
 
   componentDidMount(){
-    
-    axios.get(this.props.tagUrl)
+    const url = this.props.tagUrl.replace('https://api.github.com', '/api')
+    axios.get(url)
       .then(res => {
         if(res.data.length != 0){
         this.setState({
@@ -30,9 +30,7 @@ export default class Item extends React.Component {
       })
 
   }
-  add(){
-
-  }
+  
 
   render() {
     let btn = null
@@ -43,7 +41,7 @@ export default class Item extends React.Component {
 
     return (
       <div className="listItem ">
-        <span className="listName">{this.props.owner}/{this.props.name}</span><span className="listLang">{this.props.language}</span><span className="listTag">{this.state.tag}</span>
+        <span className="listName"><a href={this.props.url} target="_blank">{this.props.owner}/{this.props.name}</a></span><span className="listLang">{this.props.language}</span><span className="listTag">{this.state.tag}</span>
           {btn}
       </div>
     );

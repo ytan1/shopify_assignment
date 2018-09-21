@@ -1,11 +1,13 @@
 import React from 'react'
 import './Search.css'
-import {getItems} from '../redux/search.redux'
+import {getItems, gotErr, removeAllItems} from '../redux/search.redux'
 import {connect} from 'react-redux'
 import List from '../List/List'
+import {Loader} from '../Loader/Loader'
+import {reqErr} from '../redux/loader.redux'
 @connect(
     state => state.search,
-    {getItems}
+    {getItems, gotErr, removeAllItems, reqErr}
     )
 export default class Search extends React.Component {
   
@@ -17,7 +19,12 @@ export default class Search extends React.Component {
     this.submit = this.submit.bind(this)
   }
   submit(){
-    this.props.getItems(this.state.input)
+    if(this.state.input){
+      this.props.getItems(this.state.input).then(_ => this.props.reqErr()).catch(err => console.log(err))
+    }else{
+      this.props.gotErr('Need input')
+    }
+    
   }
   handleKeyup(e){
     if(e.keyCode==13){
@@ -25,6 +32,9 @@ export default class Search extends React.Component {
         return
     }
     this.setState({input: e.target.value})
+    if(!e.target.value){
+      this.props.removeAllItems()
+    }
   }
   render() {
     let errMsg = null, list = null
@@ -38,6 +48,7 @@ export default class Search extends React.Component {
     
     return (
       <div className="Search">
+          <Loader/>
           <div className="input clearfix">
             <input className="search-box" onKeyUp={(e) => this.handleKeyup(e)} />
             <div className="search-btn" onClick={this.submit}>Search</div>

@@ -17,7 +17,7 @@ export default class List extends React.Component {
       <div className="list">
             <div className="listHeader"><span className="listName">Name</span><span className="listLang">Language</span><span className="listTag">Lastest tag</span></div>
             {this.props.items.map(item => {
-              const exist = this.props.favs.some(e => e.name === item.name)
+              const exist = this.props.favs.some(e => e.name === item.name && e.owner.login === item.owner.login)
               let btnType = 'nothing'
               if(!exist && this.props.type === 'left'){
                 btnType = 'add'
